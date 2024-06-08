@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		var spd =  body.linear_velocity.length()
 		if spd > 0.001:
 			anim.play("Walk")
-			anim.speed_scale =  spd / speed
+			#anim.speed_scale =  spd / speed
 		else:
 			anim.speed_scale = 1
 			anim.play("Idle")

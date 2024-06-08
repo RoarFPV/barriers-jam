@@ -28,7 +28,7 @@ func _physics_process(delta):
 		return
 		
 	for b in physics_bones:	
-		var target_transform: Transform3D = %pb_body.global_transform * get_bone_global_pose(b.get_bone_id())
+		var target_transform: Transform3D = global_transform * get_bone_global_pose(b.get_bone_id())
 		var current_transform: Transform3D = b.global_transform # * get_bone_global_pose(b.get_bone_id())
 
 		var rotation_difference: Basis = (target_transform.basis * current_transform.basis.inverse())

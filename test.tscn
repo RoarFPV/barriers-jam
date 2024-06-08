@@ -1,7 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://b5rm3wg635n0d"]
+[gd_scene load_steps=21 format=3 uid="uid://b5rm3wg635n0d"]
 
+[ext_resource type="Material" uid="uid://dvhjvualsiiex" path="res://proto_grid_walls_outside.tres" id="1_1mcve"]
 [ext_resource type="Material" uid="uid://buyqrk1flr7ur" path="res://proto_grid_dark.tres" id="1_dstxg"]
-[ext_resource type="Material" uid="uid://fmy85joq60ri" path="res://proto_grid_light.tres" id="2_rma4y"]
+[ext_resource type="Material" uid="uid://fmy85joq60ri" path="res://proto_grid_sidewalk.tres" id="2_rma4y"]
+[ext_resource type="Material" uid="uid://tfsrrgkqym7f" path="res://proto_grid_roof.tres" id="3_00jhg"]
 [ext_resource type="PackedScene" uid="uid://b1n6sga2k8u25" path="res://door.tscn" id="3_okna4"]
 [ext_resource type="Script" path="res://scripts/door_controller.gd" id="4_v1375"]
 [ext_resource type="Script" path="res://scripts/camera_rig.gd" id="5_ppc8n"]
@@ -71,7 +73,7 @@ navigation_mesh = SubResource("NavigationMesh_368nx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 1.23602, -5.025)
 use_collision = true
 size = Vector3(19.75, 2.47205, 9.85)
-material = ExtResource("2_rma4y")
+material = ExtResource("1_1mcve")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/CSGBox3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.368699, 5)
@@ -99,7 +101,7 @@ material = ExtResource("1_dstxg")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 2.5, 0)
 polygon = PackedVector2Array(-2.5, 0, -2.5, 2.5, 0, 1.5, 1, 0)
 depth = 20.0
-material = ExtResource("1_dstxg")
+material = ExtResource("3_00jhg")
 
 [node name="door_left" parent="NavigationRegion3D" instance=ExtResource("3_okna4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
@@ -128,7 +130,7 @@ freeze = true
 [node name="Doors" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
 
-[node name="door_left_mover" parent="Doors" instance=ExtResource("3_okna4")]
+[node name="door_left_mover" parent="Doors" node_paths=PackedStringArray("close_pin") instance=ExtResource("3_okna4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.1)
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_7q4xu")
@@ -139,19 +141,19 @@ input_open = &"door_left_open"
 input_close = &"door_left_close"
 force = 100.0
 swing = true
+close_pin = NodePath("../joints/door_left_pin")
 
-[node name="door_right_mover" parent="Doors" instance=ExtResource("3_okna4")]
+[node name="door_right_mover" parent="Doors" node_paths=PackedStringArray("close_pin") instance=ExtResource("3_okna4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.1)
 collision_mask = 0
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
 can_sleep = false
 linear_damp = 4.663
 script = ExtResource("4_v1375")
 input_open = &"door_right_open"
 input_close = &"door_right_close"
-force = -30.0
+force = -100.0
+swing = true
+close_pin = NodePath("../joints/door_right_pin")
 
 [node name="joints" type="Node3D" parent="Doors"]
 
@@ -165,17 +167,15 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.95,
 node_b = NodePath("../../door_left_mover")
 angular_limit/enable = true
 
-[node name="door_right_joint" type="SliderJoint3D" parent="Doors/joints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.1)
+[node name="door_right_joint" type="HingeJoint3D" parent="Doors/joints"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 0.1)
 node_b = NodePath("../../door_right_mover")
-linear_limit/upper_distance = 0.0
-linear_limit/softness = 0.67
+angular_limit/enable = true
 
-[node name="door_right_joint_upper" type="SliderJoint3D" parent="Doors/joints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.75, 0.1)
+[node name="door_right_joint_upper" type="HingeJoint3D" parent="Doors/joints"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 1.75, 0.1)
 node_b = NodePath("../../door_right_mover")
-linear_limit/upper_distance = 0.0
-linear_limit/softness = 0.67
+angular_limit/enable = true
 
 [node name="PinJoint3D" type="PinJoint3D" parent="Doors/joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
@@ -184,6 +184,18 @@ node_b = NodePath("../../../NavigationRegion3D/door_left")
 [node name="PinJoint3D2" type="PinJoint3D" parent="Doors/joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.75, 0)
 node_b = NodePath("../../../NavigationRegion3D/door_left")
+
+[node name="door_left_pin" type="PinJoint3D" parent="Doors/joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+node_b = NodePath("../../door_left_mover")
+params/bias = 0.03
+params/impulse_clamp = 1.0
+
+[node name="door_right_pin" type="PinJoint3D" parent="Doors/joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+node_b = NodePath("../../door_right_mover")
+params/bias = 0.03
+params/impulse_clamp = 1.0
 
 [node name="CameraRig" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.261, 3.5, 8.2321)
@@ -199,6 +211,7 @@ collision_mask = 0
 fov = 47.4
 
 [node name="GridMap" type="GridMap" parent="."]
+visible = false
 mesh_library = ExtResource("6_tewql")
 data = {
 "cells": PackedInt32Array(65532, 0, 0, 65534, 0, 0, 65531, 0, 0, 65533, 0, 0, 1, 0, 0, 4, 0, 0, 2, 0, 0, 3, 0, 0, 5, 65535, 1441792, 5, 65534, 1441792, 5, 0, 1048578)
@@ -228,4 +241,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_hx5tm")
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Goal" to="Goal" method="_on_area_entered"]
+[connection signal="area_shape_entered" from="Goal" to="Goal" method="_on_area_shape_entered"]
 [connection signal="body_entered" from="Goal" to="Goal" method="_on_body_entered"]

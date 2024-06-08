@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dxjgamtpqeqcj"
-path="res://.godot/imported/Round table.glb-39be6f3a15dc142de837ff8866c620ec.scn"
+path="res://.godot/imported/Round Table.glb-940a6c26a98b761fe1206f699e8aea9d.scn"
 
 [deps]
 
-source_file="res://addons/Restaurant Bits.undefined-glb/Round table.glb"
-dest_files=["res://.godot/imported/Round table.glb-39be6f3a15dc142de837ff8866c620ec.scn"]
+source_file="res://addons/Restaurant Bits.undefined-glb/Round Table.glb"
+dest_files=["res://.godot/imported/Round Table.glb-940a6c26a98b761fe1206f699e8aea9d.scn"]
 
 [params]
 
