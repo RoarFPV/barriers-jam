@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5d0aqm8kv0hd"
+path="res://.godot/imported/Yeti.obj-c0cb4f717f2e7bbbaec57dd2b99f487a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Yeti.obj-c0cb4f717f2e7bbbaec57dd2b99f487a.mesh"]
+
+source_file="res://addons/Ultimate Monsters-20240511T214150Z-001/Ultimate Monsters/Big/OBJ/Yeti.obj"
+dest_files=["res://.godot/imported/Yeti.obj-c0cb4f717f2e7bbbaec57dd2b99f487a.mesh", "res://.godot/imported/Yeti.obj-c0cb4f717f2e7bbbaec57dd2b99f487a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

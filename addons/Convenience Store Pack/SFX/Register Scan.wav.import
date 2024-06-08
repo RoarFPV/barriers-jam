@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqgpk4capf2an"
+path="res://.godot/imported/Register Scan.wav-3845f805707b44d5242f42ee2ed87b77.sample"
+
+[deps]
+
+source_file="res://addons/Convenience Store Pack/SFX/Register Scan.wav"
+dest_files=["res://.godot/imported/Register Scan.wav-3845f805707b44d5242f42ee2ed87b77.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

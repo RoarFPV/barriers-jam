@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dxgp441ss3lux"
+path="res://.godot/imported/Dragon_Evolved.obj-d6c9b5ce2a2edaec54bbc62756ad1eca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Dragon_Evolved.obj-d6c9b5ce2a2edaec54bbc62756ad1eca.mesh"]
+
+source_file="res://addons/Ultimate Monsters-20240511T214150Z-001/Ultimate Monsters/Flying/OBJ/Dragon_Evolved.obj"
+dest_files=["res://.godot/imported/Dragon_Evolved.obj-d6c9b5ce2a2edaec54bbc62756ad1eca.mesh", "res://.godot/imported/Dragon_Evolved.obj-d6c9b5ce2a2edaec54bbc62756ad1eca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

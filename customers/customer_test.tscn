@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfuydwnjd1px5"]
+
+[ext_resource type="Script" path="res://scripts/customer.gd" id="1_8xf2j"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gquyb"]
+friction = 0.95
+bounce = 0.03
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yiref"]
+radius = 0.25
+height = 1.1
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1smtn"]
+radius = 0.25
+height = 1.1
+
+[node name="Customer" type="RigidBody3D" groups=["customer"]]
+disable_mode = 1
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_gquyb")
+can_sleep = false
+script = ExtResource("1_8xf2j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_yiref")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_1smtn")
+
+[node name="nav_agent" type="NavigationAgent3D" parent="."]
+simplify_path = true
+simplify_epsilon = 0.1
+avoidance_enabled = true
+neighbor_distance = 2.0
+time_horizon_obstacles = 1.0
+debug_enabled = true
+
+[connection signal="velocity_computed" from="nav_agent" to="." method="_on_nav_agent_velocity_computed"]

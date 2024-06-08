@@ -1,0 +1,231 @@
+[gd_scene load_steps=19 format=3 uid="uid://b5rm3wg635n0d"]
+
+[ext_resource type="Material" uid="uid://buyqrk1flr7ur" path="res://proto_grid_dark.tres" id="1_dstxg"]
+[ext_resource type="Material" uid="uid://fmy85joq60ri" path="res://proto_grid_light.tres" id="2_rma4y"]
+[ext_resource type="PackedScene" uid="uid://b1n6sga2k8u25" path="res://door.tscn" id="3_okna4"]
+[ext_resource type="Script" path="res://scripts/door_controller.gd" id="4_v1375"]
+[ext_resource type="Script" path="res://scripts/camera_rig.gd" id="5_ppc8n"]
+[ext_resource type="MeshLibrary" uid="uid://bvirf71pr0326" path="res://walls_mesh_lib.meshlib" id="6_tewql"]
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="7_pwtdn"]
+[ext_resource type="Resource" uid="uid://cika77140oqkm" path="res://data/customers/customer_first.tres" id="8_0ryin"]
+[ext_resource type="Script" path="res://scripts/goal.gd" id="8_bs7q7"]
+[ext_resource type="Script" path="res://customer_data.gd" id="8_rw7ko"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7qccb"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_2ojho"]
+sky_material = SubResource("ProceduralSkyMaterial_7qccb")
+
+[sub_resource type="Environment" id="Environment_mgxy8"]
+background_mode = 2
+sky = SubResource("Sky_2ojho")
+ambient_light_source = 3
+ambient_light_color = Color(0.3525, 0.432, 0.75, 1)
+reflected_light_source = 2
+tonemap_mode = 3
+ssao_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_normalized = true
+fog_enabled = true
+fog_light_color = Color(0.2318, 0.376777, 0.61, 1)
+fog_sun_scatter = 0.12
+fog_aerial_perspective = 0.4
+fog_height_density = 2.8444
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_8v5cu"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_368nx"]
+vertices = PackedVector3Array(-0.5, 0.5, -0.75, -0.25, 0.5, 0, 0.5, 0.5, 0, 1.5, 0.5, -1.25, -1.75, 0.5, -1.25, -1.5, 0.5, -0.75, -9, 0.5, -9, -9, 0.5, -1.25, 8.75, 0.5, -9, 8.75, 0.5, -1.25, -9.5, 5.25, -2, -9.5, 4.5, -0.25, 9.5, 4.5, -0.25, 9.5, 5.25, -2, -0.5, 0.5, 0.75, 0.75, 0.5, 0.75, -9.5, 0.25, 9.5, 9.5, 0.25, 9.5, 9.5, 0.5, 0.5, -9.5, 0.5, 0.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(0, 5, 4), PackedInt32Array(4, 7, 6), PackedInt32Array(0, 4, 3), PackedInt32Array(3, 4, 6), PackedInt32Array(3, 6, 8), PackedInt32Array(8, 9, 3), PackedInt32Array(13, 12, 10), PackedInt32Array(10, 12, 11), PackedInt32Array(2, 15, 1), PackedInt32Array(1, 15, 14), PackedInt32Array(15, 17, 14), PackedInt32Array(14, 17, 16), PackedInt32Array(15, 18, 17), PackedInt32Array(16, 19, 14)]
+geometry_parsed_geometry_type = 2
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7q4xu"]
+friction = 0.83
+bounce = 0.25
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_86is4"]
+size = Vector3(15.5, 0.5, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hx5tm"]
+size = Vector3(15.5, 2, 4.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mgxy8")
+camera_attributes = SubResource("CameraAttributesPhysical_8v5cu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.93358, 0.266737, -0.23933, 0, 0.667833, 0.744312, 0.358368, -0.694875, 0.623475, 0, 0, 0)
+shadow_enabled = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+navigation_mesh = SubResource("NavigationMesh_368nx")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 1.23602, -5.025)
+use_collision = true
+size = Vector3(19.75, 2.47205, 9.85)
+material = ExtResource("2_rma4y")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.368699, 5)
+operation = 2
+size = Vector3(4.01, 1.8, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.104724, 0)
+operation = 2
+size = Vector3(19, 3, 9)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, -1.73602, 1.025)
+use_collision = true
+size = Vector3(20, 1, 12)
+material = ExtResource("2_rma4y")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 6)
+use_collision = true
+size = Vector3(20, 0.9, 8)
+material = ExtResource("1_dstxg")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="NavigationRegion3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 2.5, 0)
+polygon = PackedVector2Array(-2.5, 0, -2.5, 2.5, 0, 1.5, 1, 0)
+depth = 20.0
+material = ExtResource("1_dstxg")
+
+[node name="door_left" parent="NavigationRegion3D" instance=ExtResource("3_okna4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+sleeping = true
+lock_rotation = true
+freeze = true
+
+[node name="door_right" parent="NavigationRegion3D" instance=ExtResource("3_okna4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+sleeping = true
+lock_rotation = true
+freeze = true
+
+[node name="Doors" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+
+[node name="door_left_mover" parent="Doors" instance=ExtResource("3_okna4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.1)
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_7q4xu")
+can_sleep = false
+linear_damp = 4.663
+script = ExtResource("4_v1375")
+input_open = &"door_left_open"
+input_close = &"door_left_close"
+force = 100.0
+swing = true
+
+[node name="door_right_mover" parent="Doors" instance=ExtResource("3_okna4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.1)
+collision_mask = 0
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+can_sleep = false
+linear_damp = 4.663
+script = ExtResource("4_v1375")
+input_open = &"door_right_open"
+input_close = &"door_right_close"
+force = -30.0
+
+[node name="joints" type="Node3D" parent="Doors"]
+
+[node name="door_left_joint" type="HingeJoint3D" parent="Doors/joints"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.95, 0, 0.1)
+node_b = NodePath("../../door_left_mover")
+angular_limit/enable = true
+
+[node name="door_left_joint_upper" type="HingeJoint3D" parent="Doors/joints"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.95, 1.75, 0.1)
+node_b = NodePath("../../door_left_mover")
+angular_limit/enable = true
+
+[node name="door_right_joint" type="SliderJoint3D" parent="Doors/joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.1)
+node_b = NodePath("../../door_right_mover")
+linear_limit/upper_distance = 0.0
+linear_limit/softness = 0.67
+
+[node name="door_right_joint_upper" type="SliderJoint3D" parent="Doors/joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.75, 0.1)
+node_b = NodePath("../../door_right_mover")
+linear_limit/upper_distance = 0.0
+linear_limit/softness = 0.67
+
+[node name="PinJoint3D" type="PinJoint3D" parent="Doors/joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+node_b = NodePath("../../../NavigationRegion3D/door_left")
+
+[node name="PinJoint3D2" type="PinJoint3D" parent="Doors/joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.75, 0)
+node_b = NodePath("../../../NavigationRegion3D/door_left")
+
+[node name="CameraRig" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.261, 3.5, 8.2321)
+script = ExtResource("5_ppc8n")
+look_sensitivity = 0.1
+follow_sensitivity = 10.0
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 1, 0)
+collision_mask = 0
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig/SpringArm3D"]
+fov = 47.4
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("6_tewql")
+data = {
+"cells": PackedInt32Array(65532, 0, 0, 65534, 0, 0, 65531, 0, 0, 65533, 0, 0, 1, 0, 0, 4, 0, 0, 2, 0, 0, 3, 0, 0, 5, 65535, 1441792, 5, 65534, 1441792, 5, 0, 1048578)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Spawner" type="Area3D" parent="." groups=["spawner"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 9)
+script = ExtResource("7_pwtdn")
+customers = Array[ExtResource("8_rw7ko")]([ExtResource("8_0ryin")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spawner"]
+shape = SubResource("BoxShape3D_86is4")
+disabled = true
+
+[node name="Timer" type="Timer" parent="Spawner"]
+wait_time = 0.001
+autostart = true
+
+[node name="Goal" type="Area3D" parent="." groups=["goal"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4.5)
+collision_mask = 4
+script = ExtResource("8_bs7q7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Goal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_hx5tm")
+
+[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Goal" to="Goal" method="_on_body_entered"]

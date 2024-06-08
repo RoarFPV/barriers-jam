@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0e7025jbglli"
+path="res://.godot/imported/Fish.obj-90db5795b39a947d353bf4d4ee87274c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Fish.obj-90db5795b39a947d353bf4d4ee87274c.mesh"]
+
+source_file="res://addons/Ultimate Monsters-20240511T214150Z-001/Ultimate Monsters/Big/OBJ/Fish.obj"
+dest_files=["res://.godot/imported/Fish.obj-90db5795b39a947d353bf4d4ee87274c.mesh", "res://.godot/imported/Fish.obj-90db5795b39a947d353bf4d4ee87274c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

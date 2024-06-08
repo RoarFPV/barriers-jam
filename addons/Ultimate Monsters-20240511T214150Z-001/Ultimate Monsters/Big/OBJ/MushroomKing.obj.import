@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dtegyx1tm4im4"
+path="res://.godot/imported/MushroomKing.obj-bd12783c47b762793d6ec76668e171a5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MushroomKing.obj-bd12783c47b762793d6ec76668e171a5.mesh"]
+
+source_file="res://addons/Ultimate Monsters-20240511T214150Z-001/Ultimate Monsters/Big/OBJ/MushroomKing.obj"
+dest_files=["res://.godot/imported/MushroomKing.obj-bd12783c47b762793d6ec76668e171a5.mesh", "res://.godot/imported/MushroomKing.obj-bd12783c47b762793d6ec76668e171a5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

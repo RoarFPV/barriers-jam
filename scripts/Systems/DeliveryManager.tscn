@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://crh20jgmiuejx"]
+
+[ext_resource type="Script" path="res://scripts/Systems/delivery_manager.gd" id="1_p48ne"]
+[ext_resource type="PackedScene" path="res://platformer/package.tscn" id="2_1mbn3"]
+
+[node name="DeliveryManager" type="Node"]
+script = ExtResource("1_p48ne")
+packageResource = ExtResource("2_1mbn3")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

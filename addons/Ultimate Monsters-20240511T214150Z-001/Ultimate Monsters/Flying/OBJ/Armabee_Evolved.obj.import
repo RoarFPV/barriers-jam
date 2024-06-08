@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://6r5580owgxvt"
+path="res://.godot/imported/Armabee_Evolved.obj-a074543d294d97c4e0dab3e02d7ec125.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Armabee_Evolved.obj-a074543d294d97c4e0dab3e02d7ec125.mesh"]
+
+source_file="res://addons/Ultimate Monsters-20240511T214150Z-001/Ultimate Monsters/Flying/OBJ/Armabee_Evolved.obj"
+dest_files=["res://.godot/imported/Armabee_Evolved.obj-a074543d294d97c4e0dab3e02d7ec125.mesh", "res://.godot/imported/Armabee_Evolved.obj-a074543d294d97c4e0dab3e02d7ec125.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

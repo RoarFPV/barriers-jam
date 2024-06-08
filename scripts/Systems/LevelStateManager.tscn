@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmmmxeq4w5orh"]
+
+[ext_resource type="Script" path="res://scripts/Systems/level_state_manager.gd" id="1_eiq0t"]
+
+[node name="LevelStateManager" type="Node3D"]
+script = ExtResource("1_eiq0t")
+
+[node name="EndTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="EndTimer" to="." method="_on_end_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4d30yqy25wvv"
+path="res://.godot/imported/Announcement 2.wav-8b0f3d4ab7e74b59d19fd0822f8f1f51.sample"
+
+[deps]
+
+source_file="res://addons/Convenience Store Pack/SFX/Announcement 2.wav"
+dest_files=["res://.godot/imported/Announcement 2.wav-8b0f3d4ab7e74b59d19fd0822f8f1f51.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

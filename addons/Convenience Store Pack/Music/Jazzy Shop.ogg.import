@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d0rnhuy84ntlf"
+path="res://.godot/imported/Jazzy Shop.ogg-a7e23534a1fd2bf11b419514d3c3feef.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/Convenience Store Pack/Music/Jazzy Shop.ogg"
+dest_files=["res://.godot/imported/Jazzy Shop.ogg-a7e23534a1fd2bf11b419514d3c3feef.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

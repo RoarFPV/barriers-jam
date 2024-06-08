@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://fmy85joq60ri"]
+
+[ext_resource type="Texture2D" uid="uid://f44ysgd0x6ll" path="res://addons/kenney_prototype_textures/light/texture_04.png" id="1_ksas1"]
+
+[resource]
+albedo_color = Color(0.537972, 0.479122, 0.367005, 1)
+albedo_texture = ExtResource("1_ksas1")
+metallic = 0.09
+roughness = 0.9
+anisotropy_enabled = true
+uv1_triplanar = true
+uv1_world_triplanar = true

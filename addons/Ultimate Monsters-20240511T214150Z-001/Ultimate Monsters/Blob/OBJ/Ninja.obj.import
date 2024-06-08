@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cssx5gvy6edqu"
+path="res://.godot/imported/Ninja.obj-774e856546246023278a77c82a42234d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Ninja.obj-774e856546246023278a77c82a42234d.mesh"]
+
+source_file="res://addons/Ultimate Monsters-20240511T214150Z-001/Ultimate Monsters/Blob/OBJ/Ninja.obj"
+dest_files=["res://.godot/imported/Ninja.obj-774e856546246023278a77c82a42234d.mesh", "res://.godot/imported/Ninja.obj-774e856546246023278a77c82a42234d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

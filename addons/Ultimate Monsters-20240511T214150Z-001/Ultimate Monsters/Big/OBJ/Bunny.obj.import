@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d0e5vurg6fbln"
+path="res://.godot/imported/Bunny.obj-77a5045053c923e5cc1adae663dcde22.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Bunny.obj-77a5045053c923e5cc1adae663dcde22.mesh"]
+
+source_file="res://addons/Ultimate Monsters-20240511T214150Z-001/Ultimate Monsters/Big/OBJ/Bunny.obj"
+dest_files=["res://.godot/imported/Bunny.obj-77a5045053c923e5cc1adae663dcde22.mesh", "res://.godot/imported/Bunny.obj-77a5045053c923e5cc1adae663dcde22.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

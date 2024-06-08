@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c7gro01ioqfod"
+path="res://.godot/imported/Hywirl.obj-ed80ddc6425855f44b7c4c5b4ecc7bab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hywirl.obj-ed80ddc6425855f44b7c4c5b4ecc7bab.mesh"]
+
+source_file="res://addons/Ultimate Monsters-20240511T214150Z-001/Ultimate Monsters/Flying/OBJ/Hywirl.obj"
+dest_files=["res://.godot/imported/Hywirl.obj-ed80ddc6425855f44b7c4c5b4ecc7bab.mesh", "res://.godot/imported/Hywirl.obj-ed80ddc6425855f44b7c4c5b4ecc7bab.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

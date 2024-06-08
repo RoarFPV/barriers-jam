@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ca5lj6dmb80pa"
+path="res://.godot/imported/Wizard.obj-b7a87ccb90fbd1612498e0c10b056332.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wizard.obj-b7a87ccb90fbd1612498e0c10b056332.mesh"]
+
+source_file="res://addons/Ultimate Monsters-20240511T214150Z-001/Ultimate Monsters/Blob/OBJ/Wizard.obj"
+dest_files=["res://.godot/imported/Wizard.obj-b7a87ccb90fbd1612498e0c10b056332.mesh", "res://.godot/imported/Wizard.obj-b7a87ccb90fbd1612498e0c10b056332.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

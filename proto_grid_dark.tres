@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://buyqrk1flr7ur"]
+
+[ext_resource type="Texture2D" uid="uid://c30h2uyc24r34" path="res://kenny_grid_light.tres" id="1_mp52k"]
+
+[resource]
+albedo_color = Color(0.255659, 0.255659, 0.255659, 1)
+albedo_texture = ExtResource("1_mp52k")
+ao_enabled = true
+detail_blend_mode = 1
+detail_uv_layer = 1
+uv1_triplanar = true
+uv1_world_triplanar = true
