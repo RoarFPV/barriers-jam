@@ -17,14 +17,17 @@ func _process(delta: float) -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("view_look"):
+		return
+		
 	var input = Input.get_axis(input_open, input_close )
 	
-	if close_pin:
-		if input:
-			close_pin.node_b = NodePath()
-		else:
-			close_pin.node_b = self.get_path()
-		close_pin.visible = input != 0
+	#if close_pin:
+		#if input:
+			#close_pin.node_b = NodePath()
+		#else:
+			#close_pin.node_b = self.get_path()
+		#close_pin.visible = input != 0
 	
 	
 	if swing:

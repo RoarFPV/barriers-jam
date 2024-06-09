@@ -24,7 +24,7 @@ func set_goal(node:Node3D):
 func _physics_process(delta: float) -> void:
 	var input_dir = Vector3.ZERO
 	
-	if goal and _nav_agent.target_position != goal.position:
+	if goal:
 		_nav_agent.set_target_position(goal.position)
 		
 	if not _nav_agent.is_navigation_finished():
@@ -47,13 +47,13 @@ func _physics_process(delta: float) -> void:
 		var spd =  body.linear_velocity.length()
 		if spd > 0.001:
 			anim.play("Walk")
-			#anim.speed_scale =  spd / speed
+			anim.speed_scale =  0.8 #minf(0.25, spd / speed)
 		else:
 			anim.speed_scale = 1
 			anim.play("Idle")
 			
-	#global_transform.basis = %pb_root.global_transform.basis # * Basis.from_euler(Vector3(0,180,0))
-	#global_transform.origin = %pb_root.global_transform.origin
+	global_transform.basis = %pb_root.global_transform.basis # * Basis.from_euler(Vector3(0,180,0))
+	global_transform.origin = %pb_root.global_transform.origin
 	#global_transform = %pb_body.global_transform
 
 var input_vel:Vector3

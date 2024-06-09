@@ -1,9 +1,9 @@
 [gd_scene load_steps=21 format=3 uid="uid://b5rm3wg635n0d"]
 
-[ext_resource type="Material" uid="uid://dvhjvualsiiex" path="res://proto_grid_walls_outside.tres" id="1_1mcve"]
+[ext_resource type="Material" path="res://proto_grid_walls_outside.tres" id="1_1mcve"]
 [ext_resource type="Material" uid="uid://buyqrk1flr7ur" path="res://proto_grid_dark.tres" id="1_dstxg"]
-[ext_resource type="Material" uid="uid://fmy85joq60ri" path="res://proto_grid_sidewalk.tres" id="2_rma4y"]
-[ext_resource type="Material" uid="uid://tfsrrgkqym7f" path="res://proto_grid_roof.tres" id="3_00jhg"]
+[ext_resource type="Material" path="res://proto_grid_sidewalk.tres" id="2_rma4y"]
+[ext_resource type="Material" path="res://proto_grid_roof.tres" id="3_00jhg"]
 [ext_resource type="PackedScene" uid="uid://b1n6sga2k8u25" path="res://door.tscn" id="3_okna4"]
 [ext_resource type="Script" path="res://scripts/door_controller.gd" id="4_v1375"]
 [ext_resource type="Script" path="res://scripts/camera_rig.gd" id="5_ppc8n"]
@@ -41,9 +41,10 @@ fog_height_density = 2.8444
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_8v5cu"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_368nx"]
-vertices = PackedVector3Array(-0.5, 0.5, -0.75, -0.25, 0.5, 0, 0.5, 0.5, 0, 1.5, 0.5, -1.25, -1.75, 0.5, -1.25, -1.5, 0.5, -0.75, -9, 0.5, -9, -9, 0.5, -1.25, 8.75, 0.5, -9, 8.75, 0.5, -1.25, -9.5, 5.25, -2, -9.5, 4.5, -0.25, 9.5, 4.5, -0.25, 9.5, 5.25, -2, -0.5, 0.5, 0.75, 0.75, 0.5, 0.75, -9.5, 0.25, 9.5, 9.5, 0.25, 9.5, 9.5, 0.5, 0.5, -9.5, 0.5, 0.5)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(0, 5, 4), PackedInt32Array(4, 7, 6), PackedInt32Array(0, 4, 3), PackedInt32Array(3, 4, 6), PackedInt32Array(3, 6, 8), PackedInt32Array(8, 9, 3), PackedInt32Array(13, 12, 10), PackedInt32Array(10, 12, 11), PackedInt32Array(2, 15, 1), PackedInt32Array(1, 15, 14), PackedInt32Array(15, 17, 14), PackedInt32Array(14, 17, 16), PackedInt32Array(15, 18, 17), PackedInt32Array(16, 19, 14)]
+vertices = PackedVector3Array(-4.5, 0.25, -1.75, -4.25, 0.25, -8.5, -8.5, 0.25, -8.5, -8.5, 0.25, -1.75, -2.25, 0.25, -1, -2.25, 0.25, -0.25, 2, 0.25, -0.25, 2, 0.25, -1, 2.75, 0.25, -1.75, 4.25, 0.5, -1.75, 4, 0.25, -8.5, -3, 0.25, -1.75, 8.25, 0.25, -1.75, 8.25, 0.25, -8.5, -9, 5, -1.5, -9, 4.75, -0.75, 9, 4.75, -0.75, 9, 5, -1.5, 2.75, 0.25, 1, -3, 0.25, 1, 4.75, 0.5, 9, -9, 0.5, 9, 4.75, 0.25, 1, -9, 0.25, 1, 9, 0.5, 9, 9, 0.5, 1)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(10, 9, 8), PackedInt32Array(4, 11, 7), PackedInt32Array(7, 11, 8), PackedInt32Array(8, 11, 1), PackedInt32Array(8, 1, 10), PackedInt32Array(11, 0, 1), PackedInt32Array(12, 9, 13), PackedInt32Array(13, 9, 10), PackedInt32Array(17, 16, 14), PackedInt32Array(14, 16, 15), PackedInt32Array(6, 18, 5), PackedInt32Array(5, 18, 19), PackedInt32Array(18, 20, 19), PackedInt32Array(19, 20, 21), PackedInt32Array(18, 22, 20), PackedInt32Array(21, 23, 19), PackedInt32Array(22, 25, 20), PackedInt32Array(20, 25, 24)]
 geometry_parsed_geometry_type = 2
+agent_radius = 1.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7q4xu"]
 friction = 0.83
@@ -76,9 +77,9 @@ size = Vector3(19.75, 2.47205, 9.85)
 material = ExtResource("1_1mcve")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.368699, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145, -0.368699, 5)
 operation = 2
-size = Vector3(4.01, 1.8, 1)
+size = Vector3(6, 1.8, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/CSGBox3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.104724, 0)
@@ -102,30 +103,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 2
 polygon = PackedVector2Array(-2.5, 0, -2.5, 2.5, 0, 1.5, 1, 0)
 depth = 20.0
 material = ExtResource("3_00jhg")
-
-[node name="door_left" parent="NavigationRegion3D" instance=ExtResource("3_okna4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-sleeping = true
-lock_rotation = true
-freeze = true
-
-[node name="door_right" parent="NavigationRegion3D" instance=ExtResource("3_okna4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-sleeping = true
-lock_rotation = true
-freeze = true
 
 [node name="Doors" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
@@ -179,11 +156,11 @@ angular_limit/enable = true
 
 [node name="PinJoint3D" type="PinJoint3D" parent="Doors/joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
-node_b = NodePath("../../../NavigationRegion3D/door_left")
+node_b = NodePath("../../door_left")
 
 [node name="PinJoint3D2" type="PinJoint3D" parent="Doors/joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.75, 0)
-node_b = NodePath("../../../NavigationRegion3D/door_left")
+node_b = NodePath("../../door_left")
 
 [node name="door_left_pin" type="PinJoint3D" parent="Doors/joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
@@ -197,6 +174,54 @@ node_b = NodePath("../../door_right_mover")
 params/bias = 0.03
 params/impulse_clamp = 1.0
 
+[node name="door_right" parent="Doors" instance=ExtResource("3_okna4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+sleeping = true
+lock_rotation = true
+freeze = true
+
+[node name="door_right2" parent="Doors" instance=ExtResource("3_okna4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+sleeping = true
+lock_rotation = true
+freeze = true
+
+[node name="door_left" parent="Doors" instance=ExtResource("3_okna4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+sleeping = true
+lock_rotation = true
+freeze = true
+
+[node name="door_left2" parent="Doors" instance=ExtResource("3_okna4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+sleeping = true
+lock_rotation = true
+freeze = true
+
 [node name="CameraRig" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.261, 3.5, 8.2321)
 script = ExtResource("5_ppc8n")
@@ -206,6 +231,7 @@ follow_sensitivity = 10.0
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraRig"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 1, 0)
 collision_mask = 0
+spring_length = 0.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig/SpringArm3D"]
 fov = 47.4

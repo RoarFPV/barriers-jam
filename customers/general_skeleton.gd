@@ -28,7 +28,7 @@ func _physics_process(delta):
 		return
 		
 	for b in physics_bones:	
-		var target_transform: Transform3D = global_transform * get_bone_global_pose(b.get_bone_id())
+		var target_transform: Transform3D =$"../../..".global_transform * get_bone_global_pose(b.get_bone_id())
 		var current_transform: Transform3D = b.global_transform # * get_bone_global_pose(b.get_bone_id())
 
 		var rotation_difference: Basis = (target_transform.basis * current_transform.basis.inverse())
@@ -41,9 +41,11 @@ func _physics_process(delta):
 			##continue
 			
 		#else:
-		#var force: Vector3 = hookes_law(position_difference, b.linear_velocity, linear_spring_stiffness, linear_spring_damping)
-		#force = force.limit_length(max_linear_force)
-		#b.linear_velocity += (force * delta)
+		var force: Vector3 = hookes_law(position_difference, b.linear_velocity, linear_spring_stiffness, linear_spring_damping)
+		force = force.limit_length(max_linear_force)
+		b.linear_velocity += (force * delta)
+	
+		%pb_body.linear_velocity -= (force* delta)
 		
 		var torque = hookes_law(rotation_difference.get_euler(), b.angular_velocity, angular_spring_stiffness, angular_spring_damping)
 		torque = torque.limit_length(max_angular_force)

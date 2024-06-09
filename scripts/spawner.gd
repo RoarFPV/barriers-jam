@@ -4,6 +4,7 @@ extends Area3D
 @export var delay_max:float = 5
 
 @export var customers:Array[CustomerData];
+@export var max_customers_active:int = 10
 
 @onready var _shape = $CollisionShape3D.shape
 
@@ -17,7 +18,10 @@ func _ready() -> void:
 	
 
 func _on_timer_timeout() -> void:
-	spawn_customer()
+	var active = get_tree().get_node_count_in_group("customer")
+	if active < max_customers_active:
+		spawn_customer()
+		
 	$Timer.wait_time = randf_range(delay_min, delay_max)
 	
 	
@@ -33,7 +37,7 @@ func spawn_customer():
 	c.goal = goal
 	var offset = (_shape.extents/2) * randf_range(-1,1)
 	offset.y =0
-	c.global_position = global_position + offset
+	c.position = global_position + offset
 	add_sibling(c)
 	
 	

@@ -8,5 +8,5 @@ script = ExtResource("1_1amdt")
 customer = ExtResource("1_wkul0")
 spawn_weight = 1
 score = 1
-speed_min = 100.0
+speed_min = 50.0
 speed_max = 100.0
