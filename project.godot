@@ -34,7 +34,7 @@ DebugDraw="*res://addons/zylann.debug_draw/debug_draw.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/csgtomesh/plugin.cfg", "res://addons/data_table/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg")
+enabled=PackedStringArray("res://addons/GameGUI/plugin.cfg", "res://addons/csgtomesh/plugin.cfg", "res://addons/data_table/plugin.cfg", "res://addons/extendable_inspector/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/rope3d/plugin.cfg")
 
 [filesystem]
 

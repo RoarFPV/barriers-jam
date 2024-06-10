@@ -7,6 +7,8 @@ var speed:float = 1
 var anim:AnimationPlayer
 @onready var body = %pb_body
 
+@export var drag:float = 0.8
+
 func _ready() -> void:
 	anim = %AnimationPlayer
 	%pb_body.global_position = global_position
@@ -27,23 +29,29 @@ func _physics_process(delta: float) -> void:
 	if goal:
 		_nav_agent.set_target_position(goal.position)
 		
+	var look
 	if not _nav_agent.is_navigation_finished():
 		
 		var targetPos = _nav_agent.get_next_path_position()
-		var targetVec =  targetPos - position
+		var targetVec = targetPos - global_position
 		var targetDir = targetVec.normalized()
 		targetDir.y = 0
 		input_dir = targetDir
 		
-		var look = transform.looking_at(targetPos).basis.get_euler().y
 		
-		rotation.y= look
+		 
+		
 		#rotation.x = 0
 		#rotation.z = 0
-		
+		if %BodyControl:
+			look = %BodyControl.transform.looking_at(targetPos, Vector3.UP)
+			%BodyControl.rotation.y = look.basis.get_euler().y
+			DebugDraw.draw_ray_3d(global_position, look.basis.x, 1, Color.RED)
+			DebugDraw.draw_ray_3d(global_position, look.basis.y, 1, Color.GREEN)
+			DebugDraw.draw_ray_3d(global_position, look.basis.z, 1, Color.BLUE)
 		#input_dir = (transform.basis * Vector3(0, 0, -1)).normalized()
 		#DebugDraw.draw_ray_3d(transform.origin, input_vel, 3, Color.AZURE)
-		body.linear_velocity += ((input_dir * speed) + input_vel * speed) * delta
+		body.linear_velocity += (((input_dir * speed) + input_vel * speed) - body.linear_velocity * drag) * delta
 		var spd =  body.linear_velocity.length()
 		if spd > 0.001:
 			anim.play("Walk")
@@ -52,9 +60,12 @@ func _physics_process(delta: float) -> void:
 			anim.speed_scale = 1
 			anim.play("Idle")
 			
+		
 	global_transform.basis = %pb_root.global_transform.basis # * Basis.from_euler(Vector3(0,180,0))
 	global_transform.origin = %pb_root.global_transform.origin
 	#global_transform = %pb_body.global_transform
+	
+	#rotation.y= look
 
 var input_vel:Vector3
 

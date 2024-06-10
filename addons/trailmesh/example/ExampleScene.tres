@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://1ec0jn11dy88"]
+
+[ext_resource type="Texture2D" uid="uid://duf7v4oj2lue8" path="res://addons/trailmesh/example/albedo.png" id="1_klnco"]
+[ext_resource type="Texture2D" uid="uid://t6b2wwoxim8u" path="res://addons/trailmesh/example/normal.png" id="2_hsmjh"]
+
+[resource]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_klnco")
+normal_enabled = true
+normal_texture = ExtResource("2_hsmjh")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CustomerData" load_steps=3 format=3 uid="uid://cika77140oqkm"]
+
+[ext_resource type="PackedScene" uid="uid://ei76clobph58" path="res://customers/customer_fish.tscn" id="1_bex2y"]
+[ext_resource type="Script" path="res://customer_data.gd" id="2_m0y3s"]
+
+[resource]
+script = ExtResource("2_m0y3s")
+customer = ExtResource("1_bex2y")
+spawn_weight = 1
+score = 1
+speed_min = 300.0
+speed_max = 400.0

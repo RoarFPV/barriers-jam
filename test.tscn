@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b5rm3wg635n0d"]
+[gd_scene load_steps=25 format=3 uid="uid://b5rm3wg635n0d"]
 
 [ext_resource type="Material" path="res://proto_grid_walls_outside.tres" id="1_1mcve"]
 [ext_resource type="Material" uid="uid://buyqrk1flr7ur" path="res://proto_grid_dark.tres" id="1_dstxg"]
@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://b1n6sga2k8u25" path="res://door.tscn" id="3_okna4"]
 [ext_resource type="Script" path="res://scripts/door_controller.gd" id="4_v1375"]
 [ext_resource type="Script" path="res://scripts/camera_rig.gd" id="5_ppc8n"]
-[ext_resource type="MeshLibrary" uid="uid://bvirf71pr0326" path="res://walls_mesh_lib.meshlib" id="6_tewql"]
+[ext_resource type="Material" uid="uid://1ec0jn11dy88" path="res://addons/trailmesh/example/ExampleScene.tres" id="7_2p733"]
 [ext_resource type="Script" path="res://scripts/spawner.gd" id="7_pwtdn"]
-[ext_resource type="Resource" uid="uid://cika77140oqkm" path="res://data/customers/customer_first.tres" id="8_0ryin"]
+[ext_resource type="Resource" uid="uid://cika77140oqkm" path="res://data/customers/customer_fish.tres" id="8_0ryin"]
 [ext_resource type="Script" path="res://scripts/goal.gd" id="8_bs7q7"]
 [ext_resource type="Script" path="res://customer_data.gd" id="8_rw7ko"]
+[ext_resource type="Resource" uid="uid://bffku16fgf4nh" path="res://data/customers/customer_orc.tres" id="12_b6g7w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7qccb"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -41,14 +42,24 @@ fog_height_density = 2.8444
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_8v5cu"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_368nx"]
-vertices = PackedVector3Array(-4.5, 0.25, -1.75, -4.25, 0.25, -8.5, -8.5, 0.25, -8.5, -8.5, 0.25, -1.75, -2.25, 0.25, -1, -2.25, 0.25, -0.25, 2, 0.25, -0.25, 2, 0.25, -1, 2.75, 0.25, -1.75, 4.25, 0.5, -1.75, 4, 0.25, -8.5, -3, 0.25, -1.75, 8.25, 0.25, -1.75, 8.25, 0.25, -8.5, -9, 5, -1.5, -9, 4.75, -0.75, 9, 4.75, -0.75, 9, 5, -1.5, 2.75, 0.25, 1, -3, 0.25, 1, 4.75, 0.5, 9, -9, 0.5, 9, 4.75, 0.25, 1, -9, 0.25, 1, 9, 0.5, 9, 9, 0.5, 1)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(10, 9, 8), PackedInt32Array(4, 11, 7), PackedInt32Array(7, 11, 8), PackedInt32Array(8, 11, 1), PackedInt32Array(8, 1, 10), PackedInt32Array(11, 0, 1), PackedInt32Array(12, 9, 13), PackedInt32Array(13, 9, 10), PackedInt32Array(17, 16, 14), PackedInt32Array(14, 16, 15), PackedInt32Array(6, 18, 5), PackedInt32Array(5, 18, 19), PackedInt32Array(18, 20, 19), PackedInt32Array(19, 20, 21), PackedInt32Array(18, 22, 20), PackedInt32Array(21, 23, 19), PackedInt32Array(22, 25, 20), PackedInt32Array(20, 25, 24)]
+vertices = PackedVector3Array(9.25, 2.85, -9.75, 9.75, 2.85, -2.75, 9.75, 2.85, -9.75, -4.25, 0.35, -1, -4, 0.35, -9.25, -9.25, 0.35, -9.25, -9.25, 0.35, -1, -0.75, 0.35, -0.5, -0.5, 0.35, 0.75, 0.5, 0.35, 1, 1, 0.35, -0.5, 4.5, 0.35, -1, 4.25, 0.35, -9.25, 9, 0.35, -1, 9, 0.35, -9.25, -9.75, 5.35, -2.25, -9.75, 4.6, 0, 9.75, 4.6, 0, 9.75, 5.35, -2.25, 9.75, 2.85, -0.25, 9.75, 2.85, -2, 9.25, 2.85, -0.5, -9.5, 2.85, -0.5, -1.5, 0.35, 1.5, -1.5, 0.35, 0.5, -3, 0.35, 0.25, -10, 0.35, 2.25, -18.25, 0.35, 27.25, -1.75, 0.35, 27.25, -9.75, 0.35, 0.25, -18.25, 0.35, 2.25, 9.75, 0.35, 0.25, 1.5, 0.35, 0.5, 1.5, 0.35, 1.5, 10, 0.35, 2.25, 1.75, 0.35, 27.25, 16.25, 0.35, 27.25, 16.25, 0.35, 2.25, 0.75, 0.35, 2, -0.75, 0.35, 2)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(6, 5, 3), PackedInt32Array(3, 5, 4), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(7, 3, 10), PackedInt32Array(10, 3, 11), PackedInt32Array(11, 3, 4), PackedInt32Array(11, 4, 12), PackedInt32Array(13, 11, 14), PackedInt32Array(14, 11, 12), PackedInt32Array(18, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(21, 20, 19), PackedInt32Array(21, 19, 22), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 26), PackedInt32Array(26, 23, 28), PackedInt32Array(26, 28, 27), PackedInt32Array(26, 29, 25), PackedInt32Array(27, 30, 26), PackedInt32Array(32, 31, 33), PackedInt32Array(33, 31, 34), PackedInt32Array(33, 34, 35), PackedInt32Array(35, 34, 36), PackedInt32Array(34, 37, 36), PackedInt32Array(9, 38, 8), PackedInt32Array(8, 38, 39), PackedInt32Array(39, 38, 35), PackedInt32Array(39, 35, 28), PackedInt32Array(28, 23, 39), PackedInt32Array(38, 33, 35)]
 geometry_parsed_geometry_type = 2
-agent_radius = 1.0
+agent_height = 1.0
+agent_radius = 0.25
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7q4xu"]
 friction = 0.83
 bounce = 0.25
+
+[sub_resource type="Curve" id="Curve_qcvud"]
+_data = [Vector2(0, 0.533263), 0.0, -3.81425, 0, 0, Vector2(0.307584, 0.126927), -0.350863, -0.350863, 0, 0, Vector2(0.98736, 0.0116156), -0.312769, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_jh4q2"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve3D" id="Curve3D_mo0t6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_86is4"]
 size = Vector3(15.5, 0.5, 1.5)
@@ -69,6 +80,85 @@ shadow_enabled = true
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
 navigation_mesh = SubResource("NavigationMesh_368nx")
+use_edge_connections = false
+
+[node name="door_right" parent="NavigationRegion3D" instance=ExtResource("3_okna4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+sleeping = true
+lock_rotation = true
+freeze = true
+
+[node name="door_right2" parent="NavigationRegion3D" instance=ExtResource("3_okna4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+sleeping = true
+lock_rotation = true
+freeze = true
+
+[node name="door_left" parent="NavigationRegion3D" instance=ExtResource("3_okna4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+sleeping = true
+lock_rotation = true
+freeze = true
+
+[node name="door_open_pathing" parent="NavigationRegion3D" instance=ExtResource("3_okna4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, 1)
+visible = false
+collision_layer = 0
+collision_mask = 0
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+sleeping = true
+lock_rotation = true
+freeze = true
+
+[node name="door_open_pathing2" parent="NavigationRegion3D" instance=ExtResource("3_okna4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 1)
+visible = false
+collision_layer = 0
+collision_mask = 0
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+sleeping = true
+lock_rotation = true
+freeze = true
+
+[node name="door_left2" parent="NavigationRegion3D" instance=ExtResource("3_okna4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+sleeping = true
+lock_rotation = true
+freeze = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 1.23602, -5.025)
@@ -87,15 +177,15 @@ operation = 2
 size = Vector3(19, 3, 9)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, -1.73602, 1.025)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, -1.68602, 1.025)
 use_collision = true
-size = Vector3(20, 1, 12)
+size = Vector3(20, 0.9, 12)
 material = ExtResource("2_rma4y")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.45, 14.75)
 use_collision = true
-size = Vector3(20, 0.9, 8)
+size = Vector3(35, 0.9, 25.5)
 material = ExtResource("1_dstxg")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="NavigationRegion3D"]
@@ -119,6 +209,18 @@ input_close = &"door_left_close"
 force = 100.0
 swing = true
 close_pin = NodePath("../joints/door_left_pin")
+
+[node name="TrailEmitter" type="TrailEmitter" parent="Doors/door_left_mover"]
+material = ExtResource("7_2p733")
+curve = SubResource("Curve_qcvud")
+gradient = SubResource("Gradient_jh4q2")
+geometry_nodepath = NodePath("Path3D")
+num_points = 10
+update_interval = 0.05
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.446331, 1.7191, 0)
+
+[node name="Path3D" type="Path3D" parent="Doors/door_left_mover/TrailEmitter"]
+curve = SubResource("Curve3D_mo0t6")
 
 [node name="door_right_mover" parent="Doors" node_paths=PackedStringArray("close_pin") instance=ExtResource("3_okna4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.1)
@@ -156,11 +258,11 @@ angular_limit/enable = true
 
 [node name="PinJoint3D" type="PinJoint3D" parent="Doors/joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
-node_b = NodePath("../../door_left")
+node_b = NodePath("../../../NavigationRegion3D/door_left")
 
 [node name="PinJoint3D2" type="PinJoint3D" parent="Doors/joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.75, 0)
-node_b = NodePath("../../door_left")
+node_b = NodePath("../../../NavigationRegion3D/door_left")
 
 [node name="door_left_pin" type="PinJoint3D" parent="Doors/joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
@@ -173,54 +275,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 node_b = NodePath("../../door_right_mover")
 params/bias = 0.03
 params/impulse_clamp = 1.0
-
-[node name="door_right" parent="Doors" instance=ExtResource("3_okna4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-sleeping = true
-lock_rotation = true
-freeze = true
-
-[node name="door_right2" parent="Doors" instance=ExtResource("3_okna4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-sleeping = true
-lock_rotation = true
-freeze = true
-
-[node name="door_left" parent="Doors" instance=ExtResource("3_okna4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-sleeping = true
-lock_rotation = true
-freeze = true
-
-[node name="door_left2" parent="Doors" instance=ExtResource("3_okna4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-sleeping = true
-lock_rotation = true
-freeze = true
 
 [node name="CameraRig" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.261, 3.5, 8.2321)
@@ -236,18 +290,10 @@ spring_length = 0.0
 [node name="Camera3D" type="Camera3D" parent="CameraRig/SpringArm3D"]
 fov = 47.4
 
-[node name="GridMap" type="GridMap" parent="."]
-visible = false
-mesh_library = ExtResource("6_tewql")
-data = {
-"cells": PackedInt32Array(65532, 0, 0, 65534, 0, 0, 65531, 0, 0, 65533, 0, 0, 1, 0, 0, 4, 0, 0, 2, 0, 0, 3, 0, 0, 5, 65535, 1441792, 5, 65534, 1441792, 5, 0, 1048578)
-}
-metadata/_editor_floor_ = Vector3(0, -1, 0)
-
 [node name="Spawner" type="Area3D" parent="." groups=["spawner"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 9)
 script = ExtResource("7_pwtdn")
-customers = Array[ExtResource("8_rw7ko")]([ExtResource("8_0ryin")])
+customers = Array[ExtResource("8_rw7ko")]([ExtResource("8_0ryin"), ExtResource("12_b6g7w")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spawner"]
 shape = SubResource("BoxShape3D_86is4")
